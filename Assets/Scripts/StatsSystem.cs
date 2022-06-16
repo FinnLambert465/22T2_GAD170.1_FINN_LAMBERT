@@ -24,9 +24,9 @@ public class StatsSystem : MonoBehaviour
         // set out agility, strength and intelligence to a random number between zero and ten.
         // BONUS! let's try taking our stats away from a pool of stats, i.e. 20 total, distributing this amoungst all the stats.
 
-        int intelligence = Random.Range(0, 10);
-        int strength = Random.Range(0, 10);
-        int agility = Random.Range(0, 10);
+        int intelligence = Random.Range(0, 11);
+        int strength = Random.Range(0, 11);
+        int agility = Random.Range(0, 11);
 
         // Debug out your current physical stat values (strength, agility, intelligence).
 
@@ -40,14 +40,18 @@ public class StatsSystem : MonoBehaviour
 
         // create a strength multiplier should be set to 1
 
-        float strengthMultiplyer = 
+        float strengthMultiplyer = strength * 1f;
 
         // create an intelligence multiplier should be set to 2.
 
+        float intelligenceMultiplyer = intelligence * 2f;
+
         // Debug out our current multiplier values.
 
-        // now that we have some stats and our multiplier values let's calculate our style, luck and ryhtmn based on these values.
+        Debug.Log("INT MULT = " + intelligenceMultiplyer + " AGT MULT = " + agilityMultiplyer + " STR MULT = " + strengthMultiplyer);
 
+        // now that we have some stats and our multiplier values let's calculate our style, luck and ryhtmn based on these values.
+        
         // style should be based off our strength and be converted at a rate of 1 : 1.
         style = 0;
         // luck should be based off our intelligence and be converted at a rate of 1 : 1.5f
