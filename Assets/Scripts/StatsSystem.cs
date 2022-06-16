@@ -48,12 +48,14 @@ public class StatsSystem : MonoBehaviour
 
         // Debug out our current multiplier values.
 
-        Debug.Log("INT MULT = " + intelligenceMultiplyer + " AGT MULT = " + agilityMultiplyer + " STR MULT = " + strengthMultiplyer);
+        Debug.Log("INT MULT = " + intelligenceMultiplyer + " AGL MULT = " + agilityMultiplyer + " STR MULT = " + strengthMultiplyer);
 
         // now that we have some stats and our multiplier values let's calculate our style, luck and ryhtmn based on these values.
 
         // style should be based off our strength and be converted at a rate of 1 : 1.
+
         float style = strengthMultiplyer * 1;
+
         // luck should be based off our intelligence and be converted at a rate of 1 : 1.5f
         float luck = intelligenceMultiplyer * 1.5f;
         // rhythm should be based off our agility and be converted at a rate of 1 : 0.5.
@@ -65,16 +67,27 @@ public class StatsSystem : MonoBehaviour
 
         // now let's imagine that our level has increased; and we've been granted 10 new stat points.
         // let's distribute those stats amoungst our strength and agility and intelligence.
-        int additionalPoints = 10;
+        int additionalPoints = 10 / 3;
 
-        float newLevel = (intelligenceMultiplyer + additionalPoints) + (strengthMultiplyer + additionalPoints) + (agilityMultiplyer + additionalPoints);
+        float newLevelIntelligence = (intelligenceMultiplyer + additionalPoints);
+        float newLevelAgility = (agilityMultiplyer + additionalPoints);
+        float newLevelStrength = (strengthMultiplyer + additionalPoints);
 
-        Debug.Log("New Level = " + newLevel);
 
         // Debug out our new physical stat values
 
+        Debug.Log("New Level");
+        Debug.Log("New Int = " + newLevelIntelligence + " New AGL = " + newLevelAgility + " New STG = " + newLevelStrength);
+
         // let's recalculate our style, luck and rhytmn as our initial stats have changed.
-        
+
+        float newLevelStyle = newLevelStrength * 1;
+        float newLevelLuck = newLevelIntelligence * 1.5f;
+        float newLevelRhythm = newLevelAgility * 0.5f;
+
         // Debug out our new dancing stat values
+
+        Debug.Log("New Dancing Stats");
+        Debug.Log("New Style = " + newLevelStyle + " New Luck = " + newLevelLuck + " New Rhythm = " + newLevelRhythm);
     }
 }
