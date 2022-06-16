@@ -51,19 +51,25 @@ public class StatsSystem : MonoBehaviour
         Debug.Log("INT MULT = " + intelligenceMultiplyer + " AGT MULT = " + agilityMultiplyer + " STR MULT = " + strengthMultiplyer);
 
         // now that we have some stats and our multiplier values let's calculate our style, luck and ryhtmn based on these values.
-        
+
         // style should be based off our strength and be converted at a rate of 1 : 1.
-        style = 0;
+        float style = strengthMultiplyer * 1;
         // luck should be based off our intelligence and be converted at a rate of 1 : 1.5f
-        luck = 0;
+        float luck = intelligenceMultiplyer * 1.5f;
         // rhythm should be based off our agility and be converted at a rate of 1 : 0.5.
-        rhythm = 0;
+        float rhythm = agilityMultiplyer * 0.5f;
 
         // Debug out our current dancing stat values (style, luck, rhythm)
+
+        Debug.Log("Style = " + style + " Luck = " + luck + " Rhythm = " + rhythm);
 
         // now let's imagine that our level has increased; and we've been granted 10 new stat points.
         // let's distribute those stats amoungst our strength and agility and intelligence.
         int additionalPoints = 10;
+
+        float newLevel = (intelligenceMultiplyer + additionalPoints) + (strengthMultiplyer + additionalPoints) + (agilityMultiplyer + additionalPoints);
+
+        Debug.Log("New Level = " + newLevel);
 
         // Debug out our new physical stat values
 
