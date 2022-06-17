@@ -65,7 +65,7 @@ public class BattleSystem : MonoBehaviour
         if (playerOneChanceToWin > playerTwoChanceToWin)    
         {
             Debug.Log("Player One Wins");
-            Debug.Log(playerOneChanceToWin - playerTwoChanceToWin + "EP Gained" );
+            Debug.Log(playerOneChanceToWin - playerTwoChanceToWin + "XP Gained" );
 
         }
         if (playerTwoChanceToWin > playerOneChanceToWin)
